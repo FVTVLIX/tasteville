@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Food.destroy_all
+Flavor.destroy_all
+User.destroy_all
+
+@user = User.create!(username: 'memer5000', email: 'popandlock@email.com', password: '123456')
+
+@salty = Flavor.create!(name: 'Salty')
+@sweet = Flavor.create!(name: 'Sweet')
+@umami = Flavor.create!(name: 'Umami')
+@bitter = Flavor.create!(name: 'Bitter')
+@sour = Flavor.create!(name: 'Sour')
+
+Food.create!(name: 'pizza', user: @user, flavors: [@salty, @sweet, @umami, @bitter])
